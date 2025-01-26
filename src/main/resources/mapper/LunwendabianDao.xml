@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LunwendabianDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LunwendabianEntity" id="lunwendabianMap">
+        <result property="ketimingcheng" column="ketimingcheng"/>
+        <result property="dabianppt" column="dabianppt"/>
+        <result property="daoshigonghao" column="daoshigonghao"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xueshengxingming" column="xueshengxingming"/>
+        <result property="dabianshijian" column="dabianshijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LunwendabianVO" >
+		SELECT * FROM lunwendabian  lunwendabian         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LunwendabianVO" >
+		SELECT  lunwendabian.* FROM lunwendabian  lunwendabian
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LunwendabianView" >
+
+		SELECT  lunwendabian.* FROM lunwendabian  lunwendabian 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LunwendabianView" >
+		SELECT * FROM lunwendabian  lunwendabian <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
